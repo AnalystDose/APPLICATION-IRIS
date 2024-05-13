@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block title %} Prediction {% endblock title %}
+
+
+{% block content %}
+    
+    {% if not user.is_authenticated  %}
+        <br>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Retour</a>
+    {% endif %}    
+    
+    <div class="row" style="color: #4e4e4e; font-style: bold; font-size: 3rem; ">
+        <div class="col-md-8">Prediction de mois</div>
+        <div class="col-md-4">
+            <div style="float:right;"> <a class="btn btn-success" href="#">Voir prediction</a> </div>
+        </div>
+    </div>
+
+    <div style="border-bottom: 1px solid white;"></div>
+
+    <br>
+
+{% endblock content %}

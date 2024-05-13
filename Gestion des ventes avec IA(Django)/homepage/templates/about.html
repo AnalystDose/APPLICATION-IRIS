@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block title %} Apropos {% endblock title %}
+
+
+{% block content %}
+    
+    {% if not user.is_authenticated  %}
+        <br>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Retour</a>
+    {% endif %}    
+    
+    <div class="align-middle" style="color: #4caf50; font-style: bold; font-size: 3rem;">SGS</div>
+    <div class="align-middle" style="color: rgb(73, 73, 73)">Un système de gestion des stocks</div>
+    <br><br>
+
+    <div class="align-middle"> 
+        <h2 style="color:#4caf50">| Apropos |</h3> <br>
+            <p>
+                SGS est un logiciel simple de gestion des stocks créé pour répondre aux besoins d'une entreprise.
+                Le logiciel est capable d'assurer le suivi des stocks entrants et sortants grâce à une facture dynamique.
+                Chaque fournisseur dispose d'un profil où il peut consulter l'historique de ses transactions avec l'entreprise.
+            </p>
+        <br>
+    </div>
+        <h2 style="color:#4caf50" class="align-middle">| Caractéristiques  |</h3> <br>
+            <ul style="display:table; margin:0 auto; ">                
+                <li style="color:#494949;">Graphique interactif pour afficher le stock actuellement disponible</li>
+                <li style="color:#494949;">Les détails du stock, comme le stock actuellement disponible, sont conservés.</li>
+                <li style="color:#494949;">Les transactions entrantes sont effectuées par le biais d'achats.</li>
+                <li style="color:#494949;">Les transactions sortantes sont effectuées par le biais des ventes.</li>
+                <li style="color:#494949;">Chaque transaction effectuée par l'intermédiaire du logiciel est enregistrée</li>
+                <li style="color:#494949;">La facture est rendue de manière dynamique et peut être imprimée</li>
+                <li style="color:#494949;">Des profils distincts sont maintenus pour les fournisseurs</li>
+            </ul>  
+        <br>
+    <div class="align-middle">
+        <h2 style="color:#4caf50" >| Developpeur |</h3> <br>
+            <p>Cheick Ouadeba</p>
+            <br><br><br>
+    </div>
+
+{% endblock content %}

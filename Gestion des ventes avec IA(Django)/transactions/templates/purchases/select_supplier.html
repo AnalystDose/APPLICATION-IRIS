@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block title %} New Purchase {% endblock title %}
+
+
+{% block content %}
+
+    <div style="color:#575757; font-style: bold; font-size: 3rem; border-bottom: 1px solid white;">Nouvel Achat</div>
+    
+    <br>
+    
+    <form method="post">
+
+        {% csrf_token %}
+        
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">Fournisseur :</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+
+        <br>
+        <div class="align-middle">
+            <button type="submit" class="btn btn-success">Suivant</button>
+            <a href="{% url 'purchases-list' %}" class="btn btn-secondary">Quitter</a>
+        </div>
+        
+    </form>
+
+{% endblock content %}

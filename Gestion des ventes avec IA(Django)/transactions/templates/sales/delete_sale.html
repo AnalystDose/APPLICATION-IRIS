@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block title %} Delete Sale {% endblock title %}
+
+
+{% block content %}
+                
+    <form method="post">
+        
+        {% csrf_token %}
+        
+        <fieldset class="form-group">
+            <div style="color:#575757; font-style: bold; font-size: 3rem; border-bottom: 1px solid white;">Supprimer la facture de vente</div> <br>
+            <h2 style="color:#575757;">Êtes-vous sûr de vouloir supprimer la facture n: {{ object.billno }}?</h2>
+        </fieldset>
+
+        <div class="form-group">  
+            <button type="submit" class="btn btn-danger">Oui, Supprimer</button>
+            <a href="{% url 'sales-list' %}" class="btn btn-secondary">Annuler</a>
+        </div>
+        
+    </form>
+
+{% endblock content %}
